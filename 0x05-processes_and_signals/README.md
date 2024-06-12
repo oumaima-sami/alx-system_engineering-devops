@@ -1,65 +1,81 @@
-# 0x05. Processes and signals
+# Processes and signals
 
-## Resources:books:
-Read or watch:
-* [Linux PID](https://intranet.hbtn.io/rltoken/FcpEdqz8hau7eEB0Pi8Ong)
-* [Linux process](https://intranet.hbtn.io/rltoken/hX_t2YK0erLPbdTq0-uKwQ)
-* [Linux signal](https://intranet.hbtn.io/rltoken/SojW4zvL8j1yaoa7_NM6rA)
+In this project, I learned about handling process ID's and signals in Bash
+with `ps`, `pgrep`, `pkill`, `pkill`, `exit`, and `trap`.
 
----
-## Learning Objectives:bulb:
-What you should learn from this project:
+## Tasks :page_with_curl:
 
-* What is a PID
-* What is a process
-* How to find a process’ PID
-* How to kill a process
-* What is a signal
-* What are the 2 signals that cannot be ignored
+* **0. What is my PID**
+  * [0-what-is-my-pid](./0-what-is-my-pid): Bash script that displays its own PID.
 
----
+* **1. List your processes**
+  * [1-list_your_processes](./1-list_your_processes): Bash script that displays a
+  list of currently running processes.
+  * Shows all processes for all users, including those not featuring a TTY.
+  * Processes are displayed in a user-oriented hierarchy.
 
-### [0. What is my PID](./0-what-is-my-pid)
-* Write a Bash script that displays its own PID.
+* **2. Show your Bash PID**
+  * [2-show_your_bash_pid](./2-show_your_bash_pid): Bash script that displays lines
+  containing the `bash` keyword based on the script defined in `1-list_your_processes`.
 
+* **3. Show your Bash PID made easy**
+  * [3-show_your_bash_pid_made_easy](./3-show_your_bash_pid_made_easy): Bash script
+  that displays the PID along with the process name of processes who name contains the
+  word `bash`.
 
-### [1. List your processes](./1-list_your_processes)
-* Write a Bash script that displays a list of currently running processes.
+* **4. To infinity and beyond**
+  * [4-to_infinity_and_beyond](./4-to_infinity_and_beyond): Bash script that displays
+  `To infinity and beyond` indefinitely with a `sleep 2` in between each iteration.
 
+* **5. Don't stop me now!**
+  * [5-dont_stop_me_now](./5-dont_stop_me_now): Bash script that kills the
+  [4-to_infinity_and_beyond](./4-to_infinity_and_beyond) process using `kill`.
 
-### [2. Show your Bash PID](./2-show_your_bash_pid)
-* Using your previous exercise command, write a Bash script that displays lines containing the bash word, thus allowing you to easily get the PID of your Bash process.
+* **6. Stop me if you can**
+  * [6-stop_me_if_you_can](./6-stop_me_if_you_can): Bash script that kills the
+  [4-to_infinity_and_beyond](./4-to_infinity_and_beyond) process using `pkill`.
 
+* **7. Highlander**
+  * [7-highlander](./7-highlander): Bash script that displays `To infinity and beyond`
+  indefinitely with a `sleep 2` in between each iteration.
+  * Displays `I am invincible!!!` upon receiving a `SIGTERM` signal.
 
-### [3. Show your Bash PID made easy](./3-show_your_bash_pid_made_easy)
-* Write a Bash script that displays the PID, along with the process name, of processes whose name contain the word bash.
+* **8. Beheaded process**
+  * [8-beheaded_process](./8-beheaded_process): Bash script that kills the process
+  [7-highlander](./7-highlander).
 
+* **9. Process and PID file**
+  * [100-process_and_pid_file](./100-process_and_pid_file): Bash script that creates the file
+  `/var/run/holbertonscript.pid` containing its PID and displays `To infinity and
+  beyond` indefinitely.
+  * Displays `I hate the kill command` upon receiving a `SIGTERM` signal.
+  * Displays `Y U no love me?!` upon receiving a `SIGINT` signal.
+  * Deletes the file `/var/run/holbertonscript.pid` and terminates itself
+  upon receiving the `SIGQUIT` or `SIGTERM` signal.
 
-### [4. To infinity and beyond](./4-to_infinity_and_beyond)
-* Write a Bash script that displays To infinity and beyond indefinitely. 
+* **10. Manage my process**
+  * [manage_my_process](./manage_my_process): Bash script that writes `I am alive!` to the file
+  `/tmp/my_process` indefinitely.
+    * Sleeps two seconds in between each write.
+  * [101-manage_my_process](./101-manage_my_process): Bash script that manages the
+  [manage_my_process](./manage_my_process) script.
+  * When passed the argument `start`:
+    * Starts [manage_my_process](./manage_my_process).
+    * Creates a file containing its PID in `/var/run/my_process.pid`.
+    * Displays `manage_my_process started`.
+  * When passed the argument `stop`:
+    * Stops [manage_my_process](./manage_my_process).
+    * Deletes the file `/var/run/my_process.pid`.
+    * Displays `manage_my_process stopped`.
+  * When passed the argument `restart`:
+    * Stops [manage_my_process](./manage_my_process).
+    * Deletes the file `/var/run/my_process.pid`.
+    * Starts `manage_my_process`.
+    * Creates a file containing its PID in `/var/run/my_process.pid`.
+    * Displays `manage_my_process started`.
+  * Otherwise, displays `Usage: manage_my_process {start|stop|restart}`.
 
-
-### [5. Don't stop my now!](./5-dont_stop_me_now)
-* We stopped our 4-to_infinity_and_beyond process using ctrl+c in the previous task, there is actually another way to do this.
-
-
-### [6. Stop me if you can](./6-stop_me_if_you_can)
-* Write a Bash script that stops 4-to_infinity_and_beyond process.
-
-
-### [7. Highlander](./7-highlander)
-* Write a Bash script that displays: 
-
-
-### [8. Beheaded process](./8-beheaded_process)
-* Write a Bash script that kills the process 7-highlander.
-
----
-
-## Author
-* **Joseph Mahiuha** - [Mahiuha](https://github.com/Mahiuha)
-
------
-<!-- Contact info -->
-
-
+* **11. Zombie**
+  * [102-zombie.c](./102-zombie.c): C program that creates five zombie processes.
+  * For every zombie created, displays `Zombie process created, PID:
+  <ZOMBIE_PID>`.

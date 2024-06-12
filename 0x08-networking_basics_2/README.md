@@ -1,39 +1,20 @@
-# 0x08. Networking Basics 2
+# Networking basics #1
 
-## Resources:books:
-Read or watch:
-* [Different Types of Network](https://www.lifewire.com/lans-wans-and-other-area-networks-817376)
-* [MAC address](https://whatismyipaddress.com/mac-address)
-* [Private and public address](https://www.iplocation.net/public-vs-private-ip-address)
-* [Localhost](https://whatismyipaddress.com/localhost)
-* [TCP and UDP](https://www.howtogeek.com/190014/htg-explains-what-is-the-difference-between-tcp-and-udp/)
-* [Docker sed](https://web.archive.org/web/20171117023601/http://blog.jonathanargentiero.com/docker-sed-cannot-rename-etcsedl8ysxl-device-or-resource-busy/)
+This project was the second of two introducing networking. I continued to learn
+about IP addresses while practicing manipulating them with Bash scripts.
 
-----
-## Learning objectives:bulb:
+## Tasks :page_with_curl:
 
+* **0. Change your home IP**
+  * [0-change_your_home_IP](./0-change_your_home_IP): Bash script that configures
+  an Ubuntu server as follows:
+  * `localhost` resolves to `127.0.0.2`
+  * `facebook.com` resolves to `8.8.8.8`
 
-## **General**
+* **1. Show attached IPs**
+  * [1-show_attached_IPs](./1-show_attached_IPs): Bash script that displays all active IPv4
+  IP's on the machine.
 
-* What is localhost/127.0.0.1
-* What is 0.0.0.0
-* What is /etc/hosts
-* How to display your machine’s active network interfaces
-
-------
-
-### [0. Change your home IP](./0-change_your_home_IP)
-
-### [1. Show attached IPs](./1-show_attached_IPs)
-
-### [2. Port listening on Localhost](./100-port_listening_on_localhost)
-
-
-------
-
-## Author
-* **Joseph Mahiuha** - [Mahiuha](https://github.com/Mahiuha)
-
------
-
-
+* **2. Port listening on localhost**
+  * [100-port_listening_on_localhost](./100-port_listening_on_localhost): Bash script that
+  listens on port `98` on `localhost`.

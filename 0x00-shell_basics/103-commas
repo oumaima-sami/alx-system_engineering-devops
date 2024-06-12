@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a -n --format=commas --indicator-style=slash
+ls -xamp
