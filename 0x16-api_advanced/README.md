@@ -5,7 +5,8 @@ working with the Reddit API.
 
 ## Tests :heavy_check_mark:
 
-* [tests](./tests): Folder of test files for all tasks. Provided by ALX.
+* [tests](./tests): Folder of test files for all tasks. Provided by Holberton
+School.
 
 ## Function Prototypes :floppy_disk:
 
